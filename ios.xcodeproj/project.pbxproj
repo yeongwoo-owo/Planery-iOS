@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9934DF7E2B41651100B89243 /* NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DF7D2B41651100B89243 /* NetworkExtension.swift */; };
+		9934DF822B41847A00B89243 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DF812B41847A00B89243 /* SplashView.swift */; };
+		9934DF852B4184B600B89243 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DF842B4184B600B89243 /* AuthViewModel.swift */; };
+		9934DF9F2B41CD3200B89243 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DF9E2B41CD3200B89243 /* HomeView.swift */; };
+		9934DFA12B41CD3900B89243 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DFA02B41CD3900B89243 /* CalendarView.swift */; };
+		9934DFA32B41CD4A00B89243 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DFA22B41CD4A00B89243 /* SettingView.swift */; };
 		99BD65E52B40E6500022EF37 /* iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD65E42B40E6500022EF37 /* iosApp.swift */; };
 		99BD65E72B40E6500022EF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD65E62B40E6500022EF37 /* ContentView.swift */; };
 		99BD65E92B40E6510022EF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99BD65E82B40E6510022EF37 /* Assets.xcassets */; };
@@ -28,6 +33,11 @@
 /* Begin PBXFileReference section */
 		51EB1B81C6AD399BCB1B0E37 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		9934DF7D2B41651100B89243 /* NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtension.swift; sourceTree = "<group>"; };
+		9934DF812B41847A00B89243 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		9934DF842B4184B600B89243 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		9934DF9E2B41CD3200B89243 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9934DFA02B41CD3900B89243 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		9934DFA22B41CD4A00B89243 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		99BD65E12B40E6500022EF37 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BD65E42B40E6500022EF37 /* iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosApp.swift; sourceTree = "<group>"; };
 		99BD65E62B40E6500022EF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +69,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9934DF832B41849700B89243 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				9934DF842B4184B600B89243 /* AuthViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		9934DF9B2B41CD1C00B89243 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				9934DF9E2B41CD3200B89243 /* HomeView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		9934DF9C2B41CD2100B89243 /* calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9934DFA02B41CD3900B89243 /* CalendarView.swift */,
+			);
+			path = calendar;
+			sourceTree = "<group>";
+		};
+		9934DF9D2B41CD2500B89243 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				9934DFA22B41CD4A00B89243 /* SettingView.swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
 		99BD65D82B40E6500022EF37 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +126,7 @@
 				99BD65F62B40E77D0022EF37 /* util */,
 				99F4C7E42B411B8E0040D08A /* repository */,
 				99BD65F32B40E7490022EF37 /* domain */,
+				9934DF832B41849700B89243 /* viewmodel */,
 				99BD65F22B40E7430022EF37 /* view */,
 				99BD65E42B40E6500022EF37 /* iosApp.swift */,
 				99BD65E82B40E6510022EF37 /* Assets.xcassets */,
@@ -103,7 +146,11 @@
 		99BD65F22B40E7430022EF37 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				9934DF9B2B41CD1C00B89243 /* home */,
+				9934DF9C2B41CD2100B89243 /* calendar */,
+				9934DF9D2B41CD2500B89243 /* setting */,
 				99BD65E62B40E6500022EF37 /* ContentView.swift */,
+				9934DF812B41847A00B89243 /* SplashView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -281,8 +328,11 @@
 				9934DF7E2B41651100B89243 /* NetworkExtension.swift in Sources */,
 				99BD65E72B40E6500022EF37 /* ContentView.swift in Sources */,
 				99BD65FE2B40E9F70022EF37 /* JsonExtension.swift in Sources */,
+				9934DFA32B41CD4A00B89243 /* SettingView.swift in Sources */,
+				9934DFA12B41CD3900B89243 /* CalendarView.swift in Sources */,
 				99BD65FC2B40E97C0022EF37 /* DateExtension.swift in Sources */,
 				99BD66012B40EA7B0022EF37 /* TestData.swift in Sources */,
+				9934DF852B4184B600B89243 /* AuthViewModel.swift in Sources */,
 				99BD65F52B40E7540022EF37 /* Calendar.swift in Sources */,
 				99BD65E52B40E6500022EF37 /* iosApp.swift in Sources */,
 				99F4C7E62B411BA30040D08A /* AuthRepository.swift in Sources */,
@@ -290,7 +340,9 @@
 				99BD65F82B40E7890022EF37 /* ColorExtension.swift in Sources */,
 				99BD65FA2B40E8360022EF37 /* Event.swift in Sources */,
 				BBEC3F068CF9D8250E9F3175 /* CalendarRepository.swift in Sources */,
+				9934DF9F2B41CD3200B89243 /* HomeView.swift in Sources */,
 				BBEC3199B0FAF35DE7869079 /* EventRepository.swift in Sources */,
+				9934DF822B41847A00B89243 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

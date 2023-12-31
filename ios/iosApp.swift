@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct iosApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authViewModel.isInitialized {
+                ContentView()
+                    .environmentObject(authViewModel)
+            } else {
+                SplashView()
+            }
         }
     }
 }
