@@ -21,5 +21,16 @@ struct Duration: Codable {
 }
 
 enum EventType: Codable {
-    case schedule, todo(isDone: Bool)
+    case schedule, todo(isDone: Bool = false)
+    
+    var description: String {
+        get {
+            switch self {
+            case .schedule:
+                return "SCHEDULE"
+            case .todo:
+                return "TODO"
+            }
+        }
+    }
 }

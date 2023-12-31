@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9934DF7E2B41651100B89243 /* NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934DF7D2B41651100B89243 /* NetworkExtension.swift */; };
 		99BD65E52B40E6500022EF37 /* iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD65E42B40E6500022EF37 /* iosApp.swift */; };
 		99BD65E72B40E6500022EF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD65E62B40E6500022EF37 /* ContentView.swift */; };
 		99BD65E92B40E6510022EF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99BD65E82B40E6510022EF37 /* Assets.xcassets */; };
@@ -17,11 +18,16 @@
 		99BD65FC2B40E97C0022EF37 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD65FB2B40E97C0022EF37 /* DateExtension.swift */; };
 		99BD65FE2B40E9F70022EF37 /* JsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD65FD2B40E9F70022EF37 /* JsonExtension.swift */; };
 		99BD66012B40EA7B0022EF37 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD66002B40EA7B0022EF37 /* TestData.swift */; };
+		99F4C7E62B411BA30040D08A /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4C7E52B411BA30040D08A /* AuthRepository.swift */; };
+		99F4C7E82B411C1F0040D08A /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4C7E72B411C1F0040D08A /* NetworkConstant.swift */; };
+		BBEC3199B0FAF35DE7869079 /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC3EBF4EB583F3C5484B5B /* EventRepository.swift */; };
+		BBEC3F068CF9D8250E9F3175 /* CalendarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC39FB53D443A32BD47D7E /* CalendarRepository.swift */; };
 		DDBE1B8F988472518700C99B /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA590427572CCE7BF7FBCB6F /* Pods_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		51EB1B81C6AD399BCB1B0E37 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		9934DF7D2B41651100B89243 /* NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtension.swift; sourceTree = "<group>"; };
 		99BD65E12B40E6500022EF37 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BD65E42B40E6500022EF37 /* iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosApp.swift; sourceTree = "<group>"; };
 		99BD65E62B40E6500022EF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +39,10 @@
 		99BD65FB2B40E97C0022EF37 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		99BD65FD2B40E9F70022EF37 /* JsonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonExtension.swift; sourceTree = "<group>"; };
 		99BD66002B40EA7B0022EF37 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		99F4C7E52B411BA30040D08A /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		99F4C7E72B411C1F0040D08A /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		BBEC39FB53D443A32BD47D7E /* CalendarRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRepository.swift; sourceTree = "<group>"; };
+		BBEC3EBF4EB583F3C5484B5B /* EventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
 		DA590427572CCE7BF7FBCB6F /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF8B1223D4F5CC5E353A96B /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +82,7 @@
 			children = (
 				99BD65FF2B40EA6F0022EF37 /* data */,
 				99BD65F62B40E77D0022EF37 /* util */,
+				99F4C7E42B411B8E0040D08A /* repository */,
 				99BD65F32B40E7490022EF37 /* domain */,
 				99BD65F22B40E7430022EF37 /* view */,
 				99BD65E42B40E6500022EF37 /* iosApp.swift */,
@@ -112,6 +123,7 @@
 				99BD65F72B40E7890022EF37 /* ColorExtension.swift */,
 				99BD65FB2B40E97C0022EF37 /* DateExtension.swift */,
 				99BD65FD2B40E9F70022EF37 /* JsonExtension.swift */,
+				9934DF7D2B41651100B89243 /* NetworkExtension.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -120,8 +132,19 @@
 			isa = PBXGroup;
 			children = (
 				99BD66002B40EA7B0022EF37 /* TestData.swift */,
+				99F4C7E72B411C1F0040D08A /* NetworkConstant.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		99F4C7E42B411B8E0040D08A /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				99F4C7E52B411BA30040D08A /* AuthRepository.swift */,
+				BBEC39FB53D443A32BD47D7E /* CalendarRepository.swift */,
+				BBEC3EBF4EB583F3C5484B5B /* EventRepository.swift */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 		E84042DDEC4428566F8BB844 /* Frameworks */ = {
@@ -255,14 +278,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9934DF7E2B41651100B89243 /* NetworkExtension.swift in Sources */,
 				99BD65E72B40E6500022EF37 /* ContentView.swift in Sources */,
 				99BD65FE2B40E9F70022EF37 /* JsonExtension.swift in Sources */,
 				99BD65FC2B40E97C0022EF37 /* DateExtension.swift in Sources */,
 				99BD66012B40EA7B0022EF37 /* TestData.swift in Sources */,
 				99BD65F52B40E7540022EF37 /* Calendar.swift in Sources */,
 				99BD65E52B40E6500022EF37 /* iosApp.swift in Sources */,
+				99F4C7E62B411BA30040D08A /* AuthRepository.swift in Sources */,
+				99F4C7E82B411C1F0040D08A /* NetworkConstant.swift in Sources */,
 				99BD65F82B40E7890022EF37 /* ColorExtension.swift in Sources */,
 				99BD65FA2B40E8360022EF37 /* Event.swift in Sources */,
+				BBEC3F068CF9D8250E9F3175 /* CalendarRepository.swift in Sources */,
+				BBEC3199B0FAF35DE7869079 /* EventRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
