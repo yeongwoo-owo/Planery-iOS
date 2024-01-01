@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventIndicator: View {
+    @Environment(\.colorScheme) var theme
     let month: Date
     let event: Event
     let padding: CGFloat
@@ -43,13 +44,14 @@ struct EventIndicator: View {
                 .frame(width: 3)
             Spacer(minLength: 0)
         }
+        .frame(height: max(1, height - 4))
         .padding(.leading, 2)
     }
     
     @ViewBuilder
     private func eventIndicator() -> some View {
         HStack(spacing: 0) {
-            Spacer(minLength: 5)
+            Spacer(minLength: 7)
             Text(event.name)
                 .font(.caption)
                 .foregroundStyle(isDone ? .gray : .primary)
@@ -61,7 +63,7 @@ struct EventIndicator: View {
                         height = $0.height
                     }
                 }
-            Spacer(minLength: 5)
+            Spacer(minLength: 0)
         }
     }
     
@@ -83,7 +85,7 @@ struct EventIndicator: View {
     private func scheduleBackground() -> some View {
         RoundedRectangle(cornerRadius: 3)
             .foregroundStyle(.gray)
-            .opacity(0.1)
+            .opacity(theme == .light ? 0.2 : 0.4)
     }
 }
 

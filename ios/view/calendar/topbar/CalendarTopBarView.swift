@@ -10,10 +10,14 @@ import SwiftUI
 struct CalendarTopBarView: View {
     @EnvironmentObject private var viewModel: CalendarViewModel
     
+    @State var isCalendarModalOn = false
+    @State var isSearchModalOn = false
+    
     var body: some View {
         HStack {
             monthText()
             Spacer()
+            buttons()
         }
         .padding(.horizontal)
     }
@@ -23,6 +27,29 @@ struct CalendarTopBarView: View {
         Text(viewModel.month.formatted("yyyy. M."))
             .font(.title)
             .bold()
+    }
+    
+    @ViewBuilder
+    private func buttons() -> some View {
+        HStack(spacing: 20) {
+            Button(action: { isCalendarModalOn = true }) {
+                Image(systemName: "calendar")
+            }
+            .sheet(isPresented: $isCalendarModalOn, onDismiss: {
+                viewModel.fetch()
+            }) {
+                CalendarModal()
+            }
+            
+            Button(action: { isSearchModalOn = true }) {
+                Image(systemName: "magnifyingglass")
+            }
+            .sheet(isPresented: $isSearchModalOn) {
+                SearchModal()
+            }
+        }
+        .imageScale(.large)
+        .tint(.primary)
     }
 }
 

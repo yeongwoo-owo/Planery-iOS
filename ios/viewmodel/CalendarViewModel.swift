@@ -5,7 +5,7 @@
 //  Created by YeongWooKim on 1/1/24.
 //
 
-import Foundation
+import SwiftUI
 
 class CalendarViewModel: ObservableObject {
     private var cookie = UserDefaults.standard.string(forKey: COOKIE_HEADER) ?? ""
@@ -15,14 +15,13 @@ class CalendarViewModel: ObservableObject {
     @Published var events: [Event] = []
     @Published var page = 0
     
+    @AppStorage("HiddenCalendar") private var _hiddenCalendar = ""
+    private var hiddenCalendar: [Int] {
+        get { _hiddenCalendar.split(separator: ",").map { Int($0)! } }
+    }
+    
     init() {
-        
-        Task {
-            let events = await eventRepository.find(cookie: cookie)
-            DispatchQueue.main.async {
-                self.events = events
-            }
-        }
+        fetch()
     }
     
     init(events: [Event]) {
@@ -32,14 +31,24 @@ class CalendarViewModel: ObservableObject {
     func changeMonth() {
         if page == 0 { return }
         month = month.interval(month: page)
-        let interval = DispatchTimeInterval.microseconds(300)
+        let interval = DispatchTimeInterval.microseconds(500)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + interval) {
             self.page = 0
         }
     }
     
+    func fetch() {
+        Task {
+            let events = await eventRepository.find(cookie: cookie)
+            DispatchQueue.main.async {
+                self.events = events
+            }
+        }
+    }
+    
     func getEventWithHeight(from: Date, to: Date) -> [HeightMappedEvent] {
         let matchEvents = events
+            .filter { !hiddenCalendar.contains($0.calendar.id) }
             .filter { !($0.duration.end <= from || $0.duration.start >= to) }
         return mappingHeight(matchEvents, from: from, to: to)
     }
@@ -72,7 +81,10 @@ class CalendarViewModel: ObservableObject {
     }
     
     func numberOfEvent(at day: Date) -> Int {
-        return events.filter { $0.duration.start <= day && $0.duration.end > day }.count
+        return events
+            .filter { !hiddenCalendar.contains($0.calendar.id) }
+            .filter { $0.duration.start <= day && $0.duration.end > day }
+            .count
     }
 }
 

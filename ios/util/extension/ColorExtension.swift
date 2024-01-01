@@ -33,6 +33,19 @@ extension Color {
         let b = lroundf(Float(components[2]) * 255)
         return String(format: "#%02lX%02lX%02lX", r, g, b)
     }
+    
+    static let colorSet: [Color] = [
+        Color(hex: "#e81123"),
+        Color(hex: "#ff8c00"),
+        Color(hex: "#ec008c"),
+        Color(hex: "#fff100"),
+        Color(hex: "#bad80a"),
+        Color(hex: "#009e49"),
+        Color(hex: "#00b294"),
+        Color(hex: "#00bcf2"),
+        Color(hex: "#00188f"),
+        Color(hex: "#68217a"),
+    ]
 }
 
 extension ColorScheme {
