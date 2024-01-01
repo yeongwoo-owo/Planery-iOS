@@ -15,13 +15,13 @@ class EventRepository {
                                 "duration": ["start": duration.start.toString(),
                                              "end": duration.end.toString()]]
         
-        return await AF.baseRequest("/events", method: .post, body: body)
+        return await AF.baseRequest("/events", method: .post, cookie: cookie, body: body)
             .validateAndDecode(Event.self)
             .returnOrNil()
     }
     
     func find(cookie: String) async -> [Event] {
-        return await AF.baseRequest("/events")
+        return await AF.baseRequest("/events", cookie: cookie)
             .validateAndDecode(EventListResponse.self)
             .returnOrNil()?.events ?? []
     }
@@ -31,27 +31,27 @@ class EventRepository {
                                 "duration": ["start": duration.start.toString(),
                                              "end": duration.end.toString()]]
         
-        return await AF.baseRequest("/events/\(event.id)", method: .put, body: body)
+        return await AF.baseRequest("/events/\(event.id)", method: .put, cookie: cookie, body: body)
             .validateAndDecode(Event.self)
             .returnOrNil()
     }
     
     func updateCalendar(cookie: String, event: Event, calendar: Calendar) async -> Event? {
         let body: Parameters = ["calendarId": calendar.id]
-        return await AF.baseRequest("/events/\(event.id)/calendar", method: .patch, body: body)
+        return await AF.baseRequest("/events/\(event.id)/calendar", method: .patch, cookie: cookie, body: body)
             .validateAndDecode(Event.self)
             .returnOrNil()
     }
     
     func updateEventType(cookie: String, event: Event, type: EventType) async -> Event? {
         let body: Parameters = ["type": type.description]
-        return await AF.baseRequest("/events/\(event.id)/type", method: .patch, body: body)
+        return await AF.baseRequest("/events/\(event.id)/type", method: .patch, cookie: cookie, body: body)
             .validateAndDecode(Event.self)
             .returnOrNil()
     }
     
     func delete(cookie: String, event: Event) async -> Event? {
-        return await AF.baseRequest("/events/\(event.id)", method: .delete)
+        return await AF.baseRequest("/events/\(event.id)", method: .delete, cookie: cookie)
             .validateAndDecode()
             .isSuccess() ? event : nil
     }

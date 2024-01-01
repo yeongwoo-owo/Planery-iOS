@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @StateObject private var viewModel = CalendarViewModel()
+    
     var body: some View {
-        Text("Calendar")
+        VStack(spacing: 0) {
+            CalendarTopBarView()
+            CalendarCarouselView()
+        }
+        .environmentObject(viewModel)
     }
 }
 
-#Preview {
+#Preview("Light") {
     CalendarView()
+}
+
+#Preview("Dark") {
+    CalendarView()
+        .preferredColorScheme(.dark)
 }

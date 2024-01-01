@@ -20,7 +20,7 @@ struct Duration: Codable {
     let end: Date
 }
 
-enum EventType: Codable {
+enum EventType: Codable, Equatable {
     case schedule, todo(isDone: Bool = false)
     
     var description: String {

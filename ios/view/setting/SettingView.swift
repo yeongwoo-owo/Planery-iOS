@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SettingView: View {
-    @EnvironmentObject var appViewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         List {
             Section {
-                Button(action: { appViewModel.logout() }) {
+                Button(action: { authViewModel.logout() }) {
                     Text("로그아웃")
                 }
             }
@@ -24,4 +24,5 @@ struct SettingView: View {
 
 #Preview {
     SettingView()
+        .environmentObject(AuthViewModel())
 }
