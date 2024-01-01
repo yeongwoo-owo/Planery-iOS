@@ -32,13 +32,7 @@ struct CalendarWeekEventView: View {
     }
 }
 
-#Preview("Light") {
+#Preview {
     CalendarView()
         .environmentObject(CalendarViewModel())
-}
-
-#Preview("Dark") {
-    CalendarView()
-        .environmentObject(CalendarViewModel())
-        .preferredColorScheme(.dark)
 }

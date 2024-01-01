@@ -40,15 +40,8 @@ struct CalendarWeekEventIndicatorContainer: View {
     }
 }
 
-#Preview("Light") {
+#Preview {
     CalendarWeekEventView(month: Date(year: 2023, month: 12),
                           startOfWeek: Date(year: 2023, month: 12, day: 31))
-    .environmentObject(CalendarViewModel(events: testEvents))
-}
-
-#Preview("Dark") {
-    CalendarWeekEventView(month: Date(year: 2023, month: 12),
-                          startOfWeek: Date(year: 2023, month: 12, day: 31))
-    .preferredColorScheme(.dark)
     .environmentObject(CalendarViewModel(events: testEvents))
 }

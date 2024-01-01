@@ -75,11 +75,6 @@ struct CalendarModal: View {
     }
 }
 
-#Preview("Light") {
+#Preview {
     CalendarModal(viewModel: CalendarModalViewModel(calendars: testCalendars))
-}
-
-#Preview("Dark") {
-    CalendarModal(viewModel: CalendarModalViewModel(calendars: testCalendars))
-        .preferredColorScheme(.dark)
 }

@@ -53,14 +53,7 @@ struct CalendarTopBarView: View {
     }
 }
 
-#Preview("Light", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     CalendarTopBarView()
         .environmentObject(CalendarViewModel())
-}
-
-#Preview("Dark", traits: .sizeThatFitsLayout) {
-    CalendarTopBarView()
-        .environmentObject(CalendarViewModel())
-        .previewLayout(.sizeThatFits)
-        .preferredColorScheme(.dark)
 }

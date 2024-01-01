@@ -89,11 +89,6 @@ struct EventIndicator: View {
     }
 }
 
-#Preview("Light", traits: .fixedLayout(width: 100, height: 20)) {
+#Preview(traits: .fixedLayout(width: 100, height: 20)) {
     EventIndicator(month: .now, event: testEvents.first!, padding: 1, height: .constant(15))
-}
-
-#Preview("Dark", traits: .fixedLayout(width: 100, height: 20)) {
-    EventIndicator(month: .now, event: testEvents.first!, padding: 1, height: .constant(15))
-        .preferredColorScheme(.dark)
 }

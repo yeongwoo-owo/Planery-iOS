@@ -21,11 +21,6 @@ struct CalendarDayIndicator: View {
     }
 }
 
-#Preview("Light") {
+#Preview {
     CalendarView()
-}
-
-#Preview("Dark") {
-    CalendarView()
-        .preferredColorScheme(.dark)
 }

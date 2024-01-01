@@ -29,11 +29,6 @@ struct CalendarWeekdayView: View {
     }
 }
 
-#Preview("Light", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     CalendarWeekdayView()
-}
-
-#Preview("Dark", traits: .sizeThatFitsLayout) {
-    CalendarWeekdayView()
-        .preferredColorScheme(.dark)
 }
